@@ -1,0 +1,130 @@
+﻿@model My_RealEstate_UI.Models.LoginViewModel
+@{
+    ViewBag.Title = "Sign In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="auth-page">
+    <div class="auth-page__split">
+
+        <!-- ── LEFT PANEL (image) ── -->
+        <div class="auth-page__left">
+            <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=900&q=80"
+                 alt="Luxury home" class="auth-page__bg-img" />
+            <div class="auth-page__overlay">
+                <div class="auth-page__quote">
+                    <h2>"Your dream home is just one step away"</h2>
+                    <p>Join thousands of happy homeowners who found their perfect property with Dwello.</p>
+                    <div class="auth-page__stats">
+                        <div><strong>8K+</strong><span>Properties</span></div>
+                        <div><strong>2K+</strong><span>Agents</span></div>
+                        <div><strong>6K+</strong><span>Sold</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── RIGHT PANEL (form) ── -->
+        <div class="auth-page__right">
+            <div class="auth-form-wrap">
+
+                <!-- Logo -->
+                <a href="@Url.Action("Index","Home")" class="auth-logo">
+                    <span class="brand-icon">D</span>wello
+                </a>
+
+                <h1 class="auth-form__title">Welcome back</h1>
+                <p class="auth-form__subtitle">Sign in to your account to continue</p>
+
+                @if (TempData["Error"] != null)
+                {
+                    <div class="alert alert--error">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        @TempData["Error"]
+                    </div>
+                }
+
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert--success">
+                        <i class="fa-solid fa-circle-check"></i>
+                        @TempData["Success"]
+                    </div>
+                }
+
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { @class = "auth-form" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, "Email Address")
+                        <div class="input-wrap">
+                            <i class="fa-regular fa-envelope"></i>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "you@example.com", type = "email" })
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "field-error" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, "Password")
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock"></i>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter your password", id = "passwordField" })
+                            <button type="button" class="toggle-pw" onclick="togglePassword('passwordField', this)" tabindex="-1">
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+                        </div>
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "field-error" })
+                    </div>
+
+                    <div class="form-row">
+                        <label class="checkbox-label">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            <span>Remember me</span>
+                        </label>
+                        <a href="@Url.Action("ForgotPassword","Account")" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn--dark btn--full">
+                        Sign In <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                }
+
+                <div class="auth-divider"><span>or continue with</span></div>
+
+                <div class="social-btns">
+                    <button class="social-btn">
+                        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20" />
+                        Google
+                    </button>
+                    <button class="social-btn">
+                        <img src="https://www.svgrepo.com/show/448234/facebook.svg" alt="Facebook" width="20" />
+                        Facebook
+                    </button>
+                </div>
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <a href="@Url.Action("Register","Account")">Create one free</a>
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+@section scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>function togglePassword(fieldId, btn) {
+            var field = document.getElementById(fieldId);
+            var icon  = btn.querySelector('i');
+            if (field.type === 'password') {
+                field.type = 'text';
+                icon.className = 'fa-regular fa-eye-slash';
+            } else {
+                field.type = 'password';
+                icon.className = 'fa-regular fa-eye';
+            }
+        }</script>
+}
