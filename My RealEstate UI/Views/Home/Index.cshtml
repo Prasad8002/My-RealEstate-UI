@@ -1,0 +1,309 @@
+@{
+    ViewBag.Title = "Find Your Dream Home";
+    ViewBag.ActivePage = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ========================================
+     HERO SECTION
+     ======================================== -->
+<section class="hero">
+    <div class="container hero__inner">
+        <div class="hero__content">
+            <h1 class="hero__title">Find Your<br />Dream Home</h1>
+            <p class="hero__subtitle">
+                Explore our curated selection of exquisite properties
+                meticulously tailored to your unique dream home vision
+            </p>
+            <a href="@Url.Action("Register","Account")" class="btn btn--dark btn--lg">Sign up</a>
+        </div>
+        <div class="hero__image">
+            <img src="@Url.Content("~/Content/images/hero-house.png")"
+                 alt="Modern luxury home"
+                 onerror="this.src='https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=80'; this.onerror=null;" />
+        </div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="container">
+        <div class="search-bar">
+            <div class="search-bar__field">
+                <i class="fa-solid fa-location-dot"></i>
+                <select name="location">
+                    <option value="" disabled selected>Location</option>
+                    <option>San Francisco, CA</option>
+                    <option>Beverly Hills, CA</option>
+                    <option>Palo Alto, CA</option>
+                    <option>Los Angeles, CA</option>
+                    <option>San Diego, CA</option>
+                </select>
+            </div>
+            <div class="search-bar__divider"></div>
+            <div class="search-bar__field">
+                <i class="fa-solid fa-house"></i>
+                <select name="type">
+                    <option value="" disabled selected>Type</option>
+                    <option>Villa</option>
+                    <option>Apartment</option>
+                    <option>Penthouse</option>
+                    <option>Studio</option>
+                </select>
+            </div>
+            <div class="search-bar__divider"></div>
+            <div class="search-bar__field">
+                <i class="fa-solid fa-dollar-sign"></i>
+                <select name="priceRange">
+                    <option value="" disabled selected>Price Range</option>
+                    <option>$500K – $1M</option>
+                    <option>$1M – $2M</option>
+                    <option>$2M – $4M</option>
+                    <option>$4M+</option>
+                </select>
+            </div>
+            <button class="btn btn--dark search-bar__btn">Sign up</button>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     ABOUT / STATS SECTION
+     ======================================== -->
+<section class="about section-pad">
+    <div class="container about__inner">
+        <div class="about__image">
+            <img src="@Url.Content("~/Content/images/about-house.png")"
+                 alt="Dream home exterior"
+                 onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80'; this.onerror=null;" />
+        </div>
+        <div class="about__content">
+            <h2>We Help You To Find<br />Your Dream Home</h2>
+            <p>
+                From cozy cottages to luxurious estates, our dedicated team
+                guides you through every step of the journey, ensuring your
+                dream home becomes a reality
+            </p>
+            <div class="about__stats">
+                <div class="stat">
+                    <span class="stat__number">8K+</span>
+                    <span class="stat__label">Houses Available</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">6K+</span>
+                    <span class="stat__label">Houses Sold</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__number">2K+</span>
+                    <span class="stat__label">Trusted Agents</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     WHY CHOOSE US
+     ======================================== -->
+<section class="why-us section-pad">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Us</h2>
+            <p>Elevating Your Home Buying Experience with Expertise, Integrity,<br />and Unmatched Personalized Service</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-card__icon">
+                    <i class="fa-solid fa-person-walking-arrow-right"></i>
+                </div>
+                <h3>Expert Guidance</h3>
+                <p>Benefit from our team's seasoned expertise for a smooth buying experience</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card__icon">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <h3>Personalized Service</h3>
+                <p>Our services adapt to your unique needs, making your journey stress-free</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card__icon">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                </div>
+                <h3>Transparent Process</h3>
+                <p>Stay informed with our clear and honest approach to buying your home</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-card__icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3>Exceptional Support</h3>
+                <p>Providing peace of mind with our responsive and attentive customer service</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     POPULAR RESIDENCES
+     ======================================== -->
+<section class="residences section-pad">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Popular Residences</h2>
+        </div>
+        <div class="residences-grid">
+
+            @* Card 1 *@
+            <div class="property-card">
+                <div class="property-card__image">
+                    <img src="@Url.Content("~/Content/images/prop1.jpg")"
+                         alt="San Francisco property"
+                         onerror="this.src='https://images.unsplash.com/photo-1613977257363-707ba9348227?w=500&q=80'; this.onerror=null;" />
+                </div>
+                <div class="property-card__body">
+                    <div class="property-card__location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>San Francisco, California</span>
+                    </div>
+                    <div class="property-card__meta">
+                        <span><i class="fa-solid fa-bed"></i> 4 Rooms</span>
+                        <span><i class="fa-solid fa-ruler-combined"></i> 3,500 sq ft</span>
+                    </div>
+                    <div class="property-card__footer">
+                        <a href="#" class="btn btn--dark btn--sm">Sign up</a>
+                        <span class="property-card__price">$2,500,000</span>
+                    </div>
+                </div>
+            </div>
+
+            @* Card 2 *@
+            <div class="property-card">
+                <div class="property-card__image">
+                    <img src="@Url.Content("~/Content/images/prop2.jpg")"
+                         alt="Beverly Hills property"
+                         onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&q=80'; this.onerror=null;" />
+                </div>
+                <div class="property-card__body">
+                    <div class="property-card__location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Beverly Hills, California</span>
+                    </div>
+                    <div class="property-card__meta">
+                        <span><i class="fa-solid fa-bed"></i> 3 Rooms</span>
+                        <span><i class="fa-solid fa-ruler-combined"></i> 1,500 sq ft</span>
+                    </div>
+                    <div class="property-card__footer">
+                        <a href="#" class="btn btn--dark btn--sm">Sign up</a>
+                        <span class="property-card__price">$850,000</span>
+                    </div>
+                </div>
+            </div>
+
+            @* Card 3 *@
+            <div class="property-card">
+                <div class="property-card__image">
+                    <img src="@Url.Content("~/Content/images/prop3.jpg")"
+                         alt="Palo Alto property"
+                         onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&q=80'; this.onerror=null;" />
+                </div>
+                <div class="property-card__body">
+                    <div class="property-card__location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Palo Alto, California</span>
+                    </div>
+                    <div class="property-card__meta">
+                        <span><i class="fa-solid fa-bed"></i> 6 Rooms</span>
+                        <span><i class="fa-solid fa-ruler-combined"></i> 4,000 sq ft</span>
+                    </div>
+                    <div class="property-card__footer">
+                        <a href="#" class="btn btn--dark btn--sm">Sign up</a>
+                        <span class="property-card__price">$3,700,000</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========================================
+     TESTIMONIALS
+     ======================================== -->
+<section class="testimonials section-pad">
+    <div class="container">
+        <div class="section-header">
+            <h2>What People Say<br />About My_RealEstate_UI</h2>
+        </div>
+
+        <div class="testimonials-slider" id="testimonialSlider">
+            <div class="testimonials-track" id="testimonialTrack">
+
+                @* Testimonial 1 *@
+                <div class="testimonial-card">
+                    <div class="testimonial-card__image">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80" alt="Sarah Nguyen" />
+                    </div>
+                    <div class="testimonial-card__body">
+                        <div class="testimonial-card__author">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=80&q=80" alt="Sarah Nguyen" class="author-avatar" />
+                            <div>
+                                <strong>Sarah Nguyen</strong>
+                                <span>San Francisco</span>
+                            </div>
+                            <div class="testimonial-card__rating">
+                                <i class="fa-solid fa-star"></i> 5.0
+                            </div>
+                        </div>
+                        <p>RealEstate truly cares about their clients. They listened to my needs and preferences and helped me find the perfect home in the Bay Area. Their professionalism and attention to detail are unmatched.</p>
+                    </div>
+                </div>
+
+                @* Testimonial 2 *@
+                <div class="testimonial-card">
+                    <div class="testimonial-card__image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Michael Rodriguez" />
+                    </div>
+                    <div class="testimonial-card__body">
+                        <div class="testimonial-card__author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80" alt="Michael Rodriguez" class="author-avatar" />
+                            <div>
+                                <strong>Michael Rodriguez</strong>
+                                <span>San Diego</span>
+                            </div>
+                            <div class="testimonial-card__rating">
+                                <i class="fa-solid fa-star"></i> 4.5
+                            </div>
+                        </div>
+                        <p>I had a fantastic experience working with Dwello. Their expertise and personalized service exceeded my expectations. I found my dream home quickly and smoothly. Highly recommended!</p>
+                    </div>
+                </div>
+
+                @* Testimonial 3 *@
+                <div class="testimonial-card">
+                    <div class="testimonial-card__image">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="Emily Johnson" />
+                    </div>
+                    <div class="testimonial-card__body">
+                        <div class="testimonial-card__author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="Emily Johnson" class="author-avatar" />
+                            <div>
+                                <strong>Emily Johnson</strong>
+                                <span>Los Angeles</span>
+                            </div>
+                            <div class="testimonial-card__rating">
+                                <i class="fa-solid fa-star"></i> 5.0
+                            </div>
+                        </div>
+                        <p>RealEstate made my dream of owning a home a reality! Their team provided exceptional support and guided me through every step of the process. I couldn't be happier with my new home!</p>
+                    </div>
+                </div>
+
+            </div><!-- /.testimonials-track -->
+        </div><!-- /.testimonials-slider -->
+
+        <div class="testimonials-nav">
+            <button class="nav-btn" id="prevBtn" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="nav-btn" id="nextBtn" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+    </div>
+</section>
