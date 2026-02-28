@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    AUTH PAGES — Login, Register, Forgot Password
    Append this block to the bottom of your site.css
    ============================================================ */
@@ -31,12 +31,7 @@
 .auth-page__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(20, 12, 8, 0.85) 0%,
-        rgba(20, 12, 8, 0.3)  60%,
-        transparent           100%
-    );
+    background: linear-gradient( to top, rgba(20, 12, 8, 0.85) 0%, rgba(20, 12, 8, 0.3) 60%, transparent 100% );
     display: flex;
     align-items: flex-end;
     padding: 48px;
@@ -63,24 +58,24 @@
     gap: 32px;
 }
 
-.auth-page__stats div {
-    display: flex;
-    flex-direction: column;
-}
+    .auth-page__stats div {
+        display: flex;
+        flex-direction: column;
+    }
 
-.auth-page__stats strong {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    color: var(--white);
-    font-weight: 700;
-    line-height: 1;
-}
+    .auth-page__stats strong {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        color: var(--white);
+        font-weight: 700;
+        line-height: 1;
+    }
 
-.auth-page__stats span {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.6);
-    margin-top: 2px;
-}
+    .auth-page__stats span {
+        font-size: 0.78rem;
+        color: rgba(255,255,255,0.6);
+        margin-top: 2px;
+    }
 
 /* ── Right Panel (form) ──────────────────────────────────── */
 .auth-page__right {
@@ -115,8 +110,13 @@
     text-align: center;
 }
 
-.auth-form-wrap--solo .form-group { text-align: left; }
-.auth-form-wrap--solo .auth-form__subtitle { margin-bottom: 28px; }
+    .auth-form-wrap--solo .form-group {
+        text-align: left;
+    }
+
+    .auth-form-wrap--solo .auth-form__subtitle {
+        margin-bottom: 28px;
+    }
 
 /* Logo */
 .auth-logo {
@@ -161,7 +161,11 @@
 }
 
 /* ── Form Elements ────────────────────────────────────────── */
-.auth-form { display: flex; flex-direction: column; gap: 0; }
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
 
 .form-group {
     display: flex;
@@ -169,12 +173,12 @@
     margin-bottom: 18px;
 }
 
-.form-group label {
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 7px;
-}
+    .form-group label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 7px;
+    }
 
 .input-wrap {
     position: relative;
@@ -182,14 +186,14 @@
     align-items: center;
 }
 
-.input-wrap > i:first-child {
-    position: absolute;
-    left: 14px;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-    pointer-events: none;
-    z-index: 1;
-}
+    .input-wrap > i:first-child {
+        position: absolute;
+        left: 14px;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        pointer-events: none;
+        z-index: 1;
+    }
 
 .form-control {
     width: 100%;
@@ -204,12 +208,14 @@
     transition: border-color var(--transition), box-shadow var(--transition);
 }
 
-.form-control:focus {
-    border-color: var(--brown);
-    box-shadow: 0 0 0 3px rgba(43, 30, 24, 0.08);
-}
+    .form-control:focus {
+        border-color: var(--brown);
+        box-shadow: 0 0 0 3px rgba(43, 30, 24, 0.08);
+    }
 
-.form-control::placeholder { color: var(--text-muted); }
+    .form-control::placeholder {
+        color: var(--text-muted);
+    }
 
 /* Password toggle */
 .toggle-pw {
@@ -224,7 +230,9 @@
     transition: color var(--transition);
 }
 
-.toggle-pw:hover { color: var(--brown); }
+    .toggle-pw:hover {
+        color: var(--brown);
+    }
 
 /* Inline row (first + last name) */
 .form-row-half {
@@ -250,14 +258,17 @@
     cursor: pointer;
 }
 
-.checkbox-label input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--brown);
-    cursor: pointer;
-}
+    .checkbox-label input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--brown);
+        cursor: pointer;
+    }
 
-.checkbox-label a { color: var(--brown); text-decoration: underline; }
+    .checkbox-label a {
+        color: var(--brown);
+        text-decoration: underline;
+    }
 
 .forgot-link {
     font-size: 0.83rem;
@@ -266,7 +277,9 @@
     transition: opacity var(--transition);
 }
 
-.forgot-link:hover { opacity: 0.7; }
+    .forgot-link:hover {
+        opacity: 0.7;
+    }
 
 /* Validation errors */
 .field-error {
@@ -320,13 +333,13 @@
     font-size: 0.8rem;
 }
 
-.auth-divider::before,
-.auth-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-}
+    .auth-divider::before,
+    .auth-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+    }
 
 /* ── Social Buttons ───────────────────────────────────────── */
 .social-btns {
@@ -353,11 +366,11 @@
     transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
 }
 
-.social-btn:hover {
-    border-color: var(--taupe);
-    background: var(--cream);
-    box-shadow: 0 2px 8px rgba(43,30,24,0.07);
-}
+    .social-btn:hover {
+        border-color: var(--taupe);
+        background: var(--cream);
+        box-shadow: 0 2px 8px rgba(43,30,24,0.07);
+    }
 
 /* ── Switch link ──────────────────────────────────────────── */
 .auth-switch {
@@ -366,13 +379,15 @@
     color: var(--text-secondary);
 }
 
-.auth-switch a {
-    color: var(--brown);
-    font-weight: 600;
-    transition: opacity var(--transition);
-}
+    .auth-switch a {
+        color: var(--brown);
+        font-weight: 600;
+        transition: opacity var(--transition);
+    }
 
-.auth-switch a:hover { opacity: 0.7; }
+        .auth-switch a:hover {
+            opacity: 0.7;
+        }
 
 /* ── Password Strength ────────────────────────────────────── */
 .pw-strength {
@@ -403,14 +418,18 @@
         grid-template-columns: 1fr;
     }
 
-    .auth-page__left { display: none; }
+    .auth-page__left {
+        display: none;
+    }
 
     .auth-page__right {
         min-height: calc(100vh - 68px);
         padding: 32px 20px;
     }
 
-    .form-row-half { grid-template-columns: 1fr; }
+    .form-row-half {
+        grid-template-columns: 1fr;
+    }
 
     .auth-form-wrap--solo {
         padding: 36px 24px;
